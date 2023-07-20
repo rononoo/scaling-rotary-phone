@@ -1,0 +1,40 @@
+<form action="/login" class="signin-form" method="POST">
+  {{ csrfField() }}
+  <div class="form-group mt-3">
+    <label class="form-control-placeholder" for="email">Email</label>
+    <input name="email" type="email" placeholder="Email associé à votre crédit" class="form-control" required="">
+  </div>
+  <div class="form-group">
+    <label class="form-control-placeholder" for="password">Mot de passe</label>
+    <input id="password-field" name="password" type="password" placeholder="Mot de passe (min 10 caractères)"
+      class="form-control" required="">
+  </div>
+  <div class="form-group">
+    <div class="checkbox">
+      <label style="cursor: pointer;">
+        <input type="checkbox" name="remember_me" style="cursor: pointer;"> Rester connecté ?
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="form-control btn btn-primary rounded submit px-3"
+      style="background-color: #016f3b; border-color:#016f3b;">Se connecter</button>
+  </div>
+  <div class="form-group d-md-flex">
+    <div class="w-50 text-md-right">
+      <a href="#" class="font-weight-bold" style="color: #016f3b;">Mot de passe oublié ?</a>
+    </div>
+  </div>
+  <div class="card-light card-light--small my-3"
+    style="padding: 20px 25px; background-color: #f5f6f7; border-radius: 4px; text-align: left;">
+    <p class="font-weight-bold text-center">3 bonnes raisons d'accéder à votre compte</p>
+    <ul class="mt-1" style="list-style: none; font-size: .9rem; padding:0;">
+      <li class="item"> <i class="fa fa-check" style="color: #18d26e;"></i> Faire une nouvelle demande
+        encore plus simplement</li>
+      <li class="item"> <i class="fa fa-check" style="color: #18d26e;"></i> Suivre l'avancement en temps
+        réel de vos demandes et de vos crédits</li>
+      <li class="item"> <i class="fa fa-check" style="color: #18d26e;"></i> Gérer vos crédits en ligne
+      </li>
+    </ul>
+  </div>
+</form>

@@ -1,0 +1,35 @@
+@layout('layouts/master')
+@set('title', 'Faire une demande')
+
+@section('content')
+<section id='intro' style='height: 75px;'>
+  <div class='intro-container'>
+    <div id='introCarousel'>
+      <div class='carousel-inner' role='listbox' />
+    </div>
+  </div>
+</section>
+<main id='main'>
+  <section id='contact' class='section-bg wow fadeInUp'>
+    <div class='container'>
+      <div class='secure-form'>
+
+        <div class='tooltip-wrapper'>
+          <div class='card-header mb-3 d-flex justify-content-between'>
+            <div class='title-5 title--small'>Sécurité des informations</div>
+            <div class='text'>Formulaire sécurisé <i class='fa fa-lock' style='color: green;'></i></div>
+          </div>
+          <p class='mb-2 text-center'>Les informations personnelles que vous partagez avec BKR Kredit dans le cadre de
+            votre demande de crédit :
+          </p>
+          <ul class='list-with-arrow text-center'>
+            <li class='item' style='list-style: none;'>Sont cantonnées dans une base de données sécurisée.</li>
+            <li class='item' style='list-style: none;'>Sont cryptées grâce à la technologie SSL.</li>
+          </ul>
+        </div>
+      </div>
+      @!include('includes/forms/new-application')
+    </div>
+  </section>
+</main>
+@endsection

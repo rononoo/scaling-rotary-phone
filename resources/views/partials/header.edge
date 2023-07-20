@@ -1,0 +1,43 @@
+<header id='header'>
+  <div class='header-area'>
+    <div class='container-fluid'>
+      <div id='logo' class='pull-left'>
+        <h1>
+          <a href='/#intro' class='scrollto'>
+            <span class='notranslate'>
+              <svg xmlns='http://www.w3.org/2000/svg' width='50' height='30' viewBox='0 0 121.581 96.428'
+                style='margin: 0; padding:0;'>
+                <g id='Groupe_8' data-name='Groupe 8' transform='translate(-1281.929 -1818.814)'>
+                  <path id='Tracé_3' data-name='Tracé 3' d='M1281.394,1855.131l39.188,7.935,21.878,52.84Z'
+                    transform='translate(0.535 -0.664)' fill='#8cc63f' />
+                  <path id='Tracé_4' data-name='Tracé 4' d='M1365.3,1863.172l-23.262,52.208,61.471-60.1Z'
+                    transform='translate(0 -0.383)' />
+                  <path id='Tracé_5' data-name='Tracé 5'
+                    d='M1342.46,1818.814l-21.781,44.151L1342.46,1915l22.851-52.032Z' fill='#006f3a' />
+                </g>
+              </svg>BKR<span style='color: #016f3b;'>Kredit</span>
+            </span>
+          </a>
+        </h1>
+      </div>
+      <nav id='nav-menu-container'>
+        <ul class='nav-menu'>
+          <li class='menu-active'><a href='/#intro'>Accueil</a></li>
+          <li><a href='/services'>Nos Services</a></li>
+          <li><a href='/#about'>À Propos</a></li>
+          <li><a href='/#contact'>Contact</a></li>
+          <li class='menu-has-children'><a class='sf-with-ul' style="cursor: pointer; color:white">Espace Client</a>
+            <ul style='display: none;'>
+              @if (auth.isLoggedIn)
+              <li><a href='/dashboard'>Mon Compte</a></li>
+              <li><a href='/logout'>Se Déconnecter</a></li>
+              @else
+              <li><a href='/login'>Se connecter</a></li>
+              @endif
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </div>
+</header>

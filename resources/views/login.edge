@@ -1,0 +1,42 @@
+@layout('layouts/master')
+@set('title', 'Se connecter')
+
+@section('content')
+<section id="intro" style="height: 80px;">
+  <div class="intro-container">
+    <div id="introCarousel">
+      <div class="carousel-inner" role="listbox">
+      </div>
+    </div>
+  </div>
+</section>
+<main id="main">
+  <section id="contact" class="section-bg wow fadeInUp">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-5">
+          <div class="wrap">
+            <div class="img" style="background-image:url(/img/bkr-kredit.png)"></div>
+            <div class="login-wrap p-4 p-md-5"
+              style="padding:15px 15px; border-radius: 4px; text-align: left; box-shadow: 3px 6px 20px rgba(53,58,203,.1) !important; background-color: #fff !important;">
+              <div class="d-block">
+                <div class="w-100">
+                  <h3 class="mb-2 text-center"><img src="/img/bkr-kredit.png" alt="BKR Kredit logo"></h3>
+                </div>
+                <p class="text-center font-weight-bold" style="font-size:1.1rem;">
+                  Espace Client Emprunteur
+                </p>
+              </div>
+              @!include('includes/forms/login')
+              <p class="text-center">
+                <a class="text-link" style="color: #016f3b;" href="/"> <i class="fa fa-arrow-left"></i> Retour à
+                  l'acceuil</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+@endsection

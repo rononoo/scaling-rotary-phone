@@ -1,0 +1,93 @@
+@layout('layouts/master')
+@set('title', 'BKR Kredit')
+
+@section('content')
+<section id='intro'>
+  <div class='intro-container'>
+    <div id='introCarousel' class='carousel slide carousel-fade' data-ride='carousel'>
+      <ol class='carousel-indicators'></ol>
+      <div class='carousel-inner' role='listbox'>
+        <div class='carousel-item active' style="background-image: url('img/intro-carousel/1.jpg');">
+          <div class='carousel-container'>
+            <div class='carousel-content'>
+              <h2>Le crédit, en plus rapide<span style='color: #13a456;'>.</span></h2>
+              <p>Effectuez votre demande 100% en ligne et obtenez votre financement en moins de 24h à des taux
+                imbattables et sans frais de remboursement anticipé !</p>
+              <a href='/ask-for-loan' class='btn-get-started scrollto'>Demandez un Prêt</a>
+            </div>
+          </div>
+        </div>
+        <div class='carousel-item' style="background-image: url('img/intro-carousel/2.jpg');">
+          <div class='carousel-container'>
+            <div class='carousel-content'>
+              <h2>Offre de services en ligne 24h / 7j<span style='color: #13a456;'>.</span></h2>
+              <p>Bénéficiez d'une offre de financement rapide et fiable pour réaliser un projet, construire une maison
+                ou encore acheter un bien. Nos offres sont disponible en 24h sans conditions.
+              </p>
+              <a href='/ask-for-loan' class='btn-get-started scrollto'>Demandez un Prêt</a>
+            </div>
+          </div>
+        </div>
+        <div class='carousel-item' style="background-image: url('img/intro-carousel/3.jpg');">
+          <div class='carousel-container'>
+            <div class='carousel-content'>
+              <h2>Le crédit, au service de l'économie réelle<span style='color: #13a456;'>.</span>
+              </h2>
+              <p>Depuis son lancement, BKR Kredit a permis la réalisation de 151 327 projets, pour un montant total de 1
+                201 564 000 €. Votre prêt personnel vous attend !</p>
+              <a href='/ask-for-loan' class='btn-get-started scrollto'>Demandez un Prêt</a>
+            </div>
+          </div>
+        </div>
+        <div class='carousel-item' style="background-image: url('img/intro-carousel/5.jpg');">
+          <div class='carousel-container'>
+            <div class='carousel-content'>
+              <h2>Empruntez en toute transparence<span style='color: #13a456;'>.</span></h2>
+              <p>BKR Kredit, c'est déjà 1 201 564 000 € de projets réalisés en Europe… Et si le prochain, c'était le
+                vôtre ?</p>
+              <a href='/ask-for-loan' class='btn-get-started scrollto'>Demandez un Prêt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class='carousel-control-prev' href='#introCarousel' role='button' data-slide='prev'>
+        <span class='carousel-control-prev-icon ion-chevron-left' aria-hidden='true'></span>
+        <span class='sr-only'>Previous</span>
+      </a>
+      <a class='carousel-control-next' href='#introCarousel' role='button' data-slide='next'>
+        <span class='carousel-control-next-icon ion-chevron-right' aria-hidden='true'></span>
+        <span class='sr-only'>Next</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<main id='main'>
+  <!--========================== Featured Services ============================-->
+  @!include('includes/featured-services')
+
+  <!--========================== About Us ============================-->
+  @!include('includes/about-us')
+
+  <!--========================== Services ============================-->
+  @!include('includes/services')
+
+  <!--============================ CTA ===============================-->
+  @!include('includes/cta')
+
+  <!--============================ Facts =============================-->
+  @!include('includes/facts')
+
+  <!--=========================== Patners ============================-->
+  @!include('includes/partners')
+
+  <!--========================== Testimonials ============================-->
+  @!include('includes/testimonials')
+
+  <!--========================== Team ============================-->
+  @!include('includes/team')
+
+  <!--=========================== Contact ============================-->
+  @!include('includes/contact')
+</main>
+@endsection

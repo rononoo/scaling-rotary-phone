@@ -1,0 +1,44 @@
+@layout('layouts/master')
+@set('title', 'Félicitations')
+
+@section('content')
+<section id="intro" style="height: 11vh;">
+  <div class="intro-container">
+    <div id="introCarousel">
+      <div class="carousel-inner" role="listbox">
+      </div>
+    </div>
+  </div>
+</section>
+<main id="main">
+  <section id="contact" class="section-bg wow fadeInUp">
+    <div class="container">
+      <div class="wrapper text-center d-flex flex-column align-items-center justify-content-center"
+        style="height: 90vh;">
+        <img class="tyBgImage" src="https://cdn.jotfor.ms/assets/img/thankYou/icons/iconDefault.png"
+          alt="thans envelope" style="height: 200px; width: 200px;">
+        <div>
+          <div class="thankyou-wrapper mt-5">
+            <div style="text-align: center;" data-mce-style="text-align: center;">
+              <h1 class="thankyou-main-text ty-text" style="text-align: center; font-size: 3rem;"
+                data-mce-style="text-align: center;">
+                Merci!
+              </h1>
+              <p class="thankyou-sub-text ty-text" style="text-align: center; font-size: 1.3rem;"
+                data-mce-style="text-align: center;">
+                Votre demande a été reçue. <br>
+                Veuillez consultez votre boîte email.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex mt-5">
+          <a class="btn" id="loan-submit" href="../">
+            Aller à l'acceuil
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+@endsection

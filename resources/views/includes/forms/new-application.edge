@@ -1,0 +1,366 @@
+<form class='jotform-form' method='post' action="/applications" enctype="multipart/form-data" accept-charset='utf-8'
+  autocomplete='on' id='application-form'>
+  {{ csrfField() }}
+  <div role='main' class='form-all'>
+    <ul class='form-section page-section'>
+      <li id='cid_74' class='form-input-wide' data-type='control_head'>
+        <div class='form-header-group header-large'>
+          <div class='header-text httal htvam'>
+            <h1 id='header_74' class='form-header' data-component='header'>
+              Formulaire de demande de prêt
+            </h1>
+          </div>
+        </div>
+      </li>
+      <li id='cid_75' class='form-input-wide' data-type='control_head'>
+        <div class='form-header-group header-small'>
+          <div class='header-text httal htvam'>
+            <h3 id='header_75' class='form-header' data-component='header'>
+              Informations Personnelles
+            </h3>
+          </div>
+        </div>
+      </li>
+      <li class='form-line' data-type='control_dropdown' id='id_15'>
+        <label class='form-label form-label-top form-label-auto' id='label_15' for='input_15'>
+          Titre:
+        </label>
+        <div id='cid_15' class='form-input-wide' data-layout='half'>
+          <select class='form-dropdown' id='input_15' name='title' style='width:310px' data-component='dropdown'>
+            <option value=''>Choisissez</option>
+            <option value='mr' {{ flashMessages.get('title', '' )=='mr' ? 'selected' : '' }}>Mr</option>
+            <option value='mrs' {{ flashMessages.get('title', '' )=='mrs' ? 'selected' : '' }}>Mme</option>
+            <option value='ms' {{ flashMessages.get('title', '' )=='ms' ? 'selected' : '' }}>Mlle</option>
+            <option value='dr' {{ flashMessages.get('title', '' )=='dr' ? 'selected' : '' }}>Dr</option>
+            <option value='prof' {{ flashMessages.get('title', '' )=='prof' ? 'selected' : '' }}>Prof</option>
+          </select>
+          <span class="error" style="color: red; font-size: .8rem">
+            {{ flashMessages.get('errors.title', '') }}
+          </span>
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_fullname' id='id_61'>
+        <label class='form-label form-label-top form-label-auto' id='label_61' for='first_61'>
+          Nom Complet
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_61' class='form-input-wide jf-required' data-layout='full'>
+          <div data-wrapper-react='true'>
+            <span class='form-sub-label-container' style='vertical-align:top' data-input-type='first'>
+              <input type='text' id='first_61' name='lastName' class='form-textbox validate[required]'
+                data-defaultvalue='' size='10' data-component='first' value="{{ flashMessages.get('lastName', '') }}"
+                aria-labelledby='label_61 sublabel_61_first' required='' />
+              <label class='form-sub-label' for='first_61' id='sublabel_61_first' style='min-height:13px'
+                aria-hidden='false'> Nom </label>
+              <span class="error" style="color: red; font-size: .8rem">
+                {{ flashMessages.get('errors.lastName', '') }}
+              </span>
+            </span>
+            <span class='form-sub-label-container' style='vertical-align:top' data-input-type='last'>
+              <input type='text' id='last_61' name='firstName' class='form-textbox validate[required]'
+                data-defaultvalue='' size='15' data-component='last' value="{{ flashMessages.get('firstName', '') }}"
+                aria-labelledby='label_61 sublabel_61_last' required='' />
+              <label class='form-sub-label' for='last_61' id='sublabel_61_last' style='min-height:13px'
+                aria-hidden='false'> Prénom(s) </label>
+              <span class="error" style="color: red; font-size: .8rem">
+                {{ flashMessages.get('errors.firstName', '') }}
+              </span>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_radio' id='id_6'>
+        <label class='form-label form-label-top form-label-auto' id='label_6' for='input_6'>
+          État civil
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_6' class='form-input-wide jf-required' data-layout='full'>
+          <div class='form-single-column' role='group' aria-labelledby='label_6' data-component='radio'>
+            <span class='form-radio-item' style='clear:left'>
+              <span class='dragger-item'>
+              </span>
+              <input type='radio' aria-describedby='label_6' class='form-radio validate[required]' id='input_6_0'
+                name='maritalStatus' value='single' required='' {{ flashMessages.get('maritalStatus', '' )=='single'
+                ? 'checked' : '' }} />
+              <label id='label_input_6_0' for='input_6_0'> Célibataire </label>
+            </span>
+            <span class='form-radio-item' style='clear:left'>
+              <span class='dragger-item'>
+              </span>
+              <input type='radio' aria-describedby='label_6' class='form-radio validate[required]' id='input_6_1'
+                name='maritalStatus' value='married' required='' {{ flashMessages.get('maritalStatus', '' )=='married'
+                ? 'checked' : '' }} />
+              <label id='label_input_6_1' for='input_6_1'> Marrié(e) </label>
+            </span>
+            <span class='form-radio-item' style='clear:left'>
+              <span class='dragger-item'>
+              </span>
+              <input type='radio' aria-describedby='label_6' class='form-radio validate[required]' id='input_6_1'
+                name='maritalStatus' value='divorced' required='' {{ flashMessages.get('maritalStatus', '' )=='divorced'
+                ? 'checked' : '' }} />
+              <label id='label_input_6_1' for='input_6_1'>
+                Divorcé(e)
+              </label>
+            </span>
+            <span class='form-radio-item' style='clear:left'>
+              <span class='dragger-item'>
+              </span>
+              <input type='radio' aria-describedby='label_6' class='form-radio validate[required]' id='input_6_2'
+                name='maritalStatus' value='widowed' required='' {{ flashMessages.get('maritalStatus', '' )=='widowed'
+                ? 'checked' : '' }} />
+              <label id='label_input_6_2' for='input_6_2'>
+                Veuf(ve)
+              </label>
+            </span>
+            <span class="error" style="color: red; font-size: .8rem">
+              {{ flashMessages.get('errors.maritalStatus', '') }}
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_email' id='id_78'>
+        <label class='form-label form-label-top form-label-auto' id='label_78' for='input_78'>
+          E-mail
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_78' class='form-input-wide jf-required' data-layout='half'>
+          <span class='form-sub-label-container' style='vertical-align:top'>
+            <input type='email' id='input_78' name='email' class='form-textbox validate[required, Email]'
+              data-defaultvalue='' style='width:310px' size='310' value="{{ flashMessages.get('email', '') }}"
+              placeholder='ex: myname@example.com' data-component='email' aria-labelledby='label_78 sublabel_input_78'
+              required='' />
+            <label class='form-sub-label' for='input_78' id='sublabel_input_78' style='min-height:13px'
+              aria-hidden='false'> example@example.com </label>
+          </span>
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_phone' id='id_72'>
+        <label class='form-label form-label-top form-label-auto' id='label_72' for='input_72_full'>
+          Téléphone
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_72' class='form-input-wide jf-required' data-layout='half'>
+          <span class='form-sub-label-container' style='vertical-align:top'>
+            <input type='tel' id='input_72_full' name='phone' data-type='mask-number'
+              class='mask-phone-number form-textbox validate[required, Fill Mask]' data-defaultvalue=''
+              style='width:310px' data-masked='true' placeholder='(000) 000-0000' data-component='phone'
+              aria-labelledby='label_72' required='' value="{{ flashMessages.get('phone', '') }}" />
+            <label class='form-sub-label is-empty' for='input_72_full' id='sublabel_72_masked' style='min-height:13px'
+              aria-hidden='false'>
+            </label>
+          </span>
+        </div>
+      </li>
+      <li id='cid_89' class='form-input-wide' data-type='control_head'>
+        <div class='form-header-group header-default'>
+          <div class='header-text httal htvam'>
+            <h2 id='header_89' class='form-header' data-component='header'>
+              Informations sur le prêt
+            </h2>
+          </div>
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_birthdate' id='id_91'>
+        <label class='form-label form-label-top' id='label_91' for='input_91'>
+          Details du prêt
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_91' class='form-input-wide jf-required' data-layout='full'>
+          <div style="flex-wrap:wrap; flex-direction:row">
+            <span class='form-sub-label-container' style='vertical-align:top'>
+              <select name='loanType' id='input_91_typeLoan' class='form-dropdown validate[required]'
+                data-component='typeLoan' aria-labelledby='label_91 sublabel_91_typeLoan'>
+                <option hidden='' value=''>Choisissez</option>
+                <option value='personal' {{ flashMessages.get('loanType', '' )=='personal' ? 'selected' : '' }}>Prêt
+                  Personnel</option>
+                <option value='holidays' {{ flashMessages.get('loanType', '' )=='holidays' ? 'selected' : '' }}>Prêt
+                  Vacances</option>
+                <option value='automobile' {{ flashMessages.get('loanType', '' )=='automobile' ? 'selected' : '' }}>
+                  Crédit Auto</option>
+                <option value='real-state' {{ flashMessages.get('loanType', '' )=='real-state' ? 'selected' : '' }}>
+                  Crédit Immobilier</option>
+                <option value='weeding' {{ flashMessages.get('loanType', '' )=='weeding' ? 'selected' : '' }}>Crédit
+                  Mariage</option>
+                <option value='consolidation' {{ flashMessages.get('loanType', '' )=='consolidation' ? 'selected' : ''
+                  }}>Crédit de Consolidation</option>
+                <option value='other' {{ flashMessages.get('loanType', '' )=='other' ? 'selected' : '' }}>Autres
+                </option>
+              </select>
+              <label class='form-sub-label' for='input_91_typeLoan' id='sublabel_input_78' style='min-height:13px'
+                aria-hidden='false'>Type de prêt</label>
+            </span>
+            <span class='form-sub-label-container' style='vertical-align:top'>
+              <input type='number' id='input_91_day' name='loanAmount' class='form-textbox validate[required]'
+                data-defaultvalue='' style='width:310px' size='250' value="{{ flashMessages.get('loanAmount', '') }}"
+                placeholder='ex: 1000' min='1000' data-component='loanAmount'
+                aria-labelledby='label_78 sublabel_input_78' required='' />
+              <label class='form-sub-label' for='input_91_day' id='sublabel_input_78' style='min-height:13px'
+                aria-hidden='false'>Montant</label>
+            </span>
+            <span class='form-sub-label-container' style='vertical-align:top'>
+              <select name='loanDuration' id='input_91_year' class='form-dropdown validate[required]'
+                data-component='birthdate-year' aria-labelledby='label_91 sublabel_91_year'>
+                <option hidden='' value=''>
+                  Choisissez
+                </option>
+                <option value='6' {{ flashMessages.get('loanDuration', '' )=='6' ? 'selected' : '' }}> 6 mois</option>
+                <option value='12' {{ flashMessages.get('loanDuration', '' )=='12' ? 'selected' : '' }}> 12 mois
+                </option>
+                <option value='24' {{ flashMessages.get('loanDuration', '' )=='24' ? 'selected' : '' }}> 24 mois
+                </option>
+                <option value='36' {{ flashMessages.get('loanDuration', '' )=='36' ? 'selected' : '' }}> 36 mois
+                </option>
+                <option value='48' {{ flashMessages.get('loanDuration', '' )=='48' ? 'selected' : '' }}> 48 mois
+                </option>
+                <option value='60' {{ flashMessages.get('loanDuration', '' )=='60' ? 'selected' : '' }}> 60 mois
+                </option>
+                <option value='72' {{ flashMessages.get('loanDuration', '' )=='72' ? 'selected' : '' }}> 72 mois
+                </option>
+                <option value='84' {{ flashMessages.get('loanDuration', '' )=='84' ? 'selected' : '' }}> 84 mois
+                </option>
+              </select>
+              <label class='form-sub-label' for='input_91_year' id='sublabel_input_78' style='min-height:13px'
+                aria-hidden='false'> Durée du crédit </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li id='cid_50' class='form-input-wide' data-type='control_head'>
+        <div class='form-header-group header-small'>
+          <div class='header-text httal htvam'>
+            <h3 id='header_50' class='form-header' data-component='header'>
+              Information d'emploi
+            </h3>
+          </div>
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_textbox' id='id_29'>
+        <label class='form-label form-label-top form-label-auto' id='label_29' for='input_29'>
+          Employeur actuel
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_29' class='form-input-wide jf-required' data-layout='half'>
+          <input type='text' id='input_29' name='employer' data-type='input-textbox'
+            class='form-textbox validate[required]' data-defaultvalue='' style='width:310px' size='310'
+            value="{{ flashMessages.get('employer', '') }}" placeholder=' ' data-component='textbox'
+            aria-labelledby='label_29' required='' />
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_textbox' id='id_30'>
+        <label class='form-label form-label-top form-label-auto' id='label_30' for='input_30'>
+          Profession
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_30' class='form-input-wide jf-required' data-layout='half'>
+          <input type='text' id='input_30' name='occupation' data-type='input-textbox'
+            class='form-textbox validate[required]' data-defaultvalue='' style='width:310px' size='310'
+            value="{{ flashMessages.get('occupation', '') }}" placeholder=' ' data-component='textbox'
+            aria-labelledby='label_30' required='' />
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_number' id='id_80'>
+        <label class='form-label form-label-top form-label-auto' id='label_80' for='input_80'>
+          Revenu mensuel brut en &euro;
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_80' class='form-input-wide jf-required' data-layout='half'>
+          <input type='number' id='input_80' name='income' data-type='input-number'
+            class='form-number-input form-textbox validate[required, Numeric]' data-defaultvalue='' style='width:310px'
+            size='310' value="{{ flashMessages.get('income', '') }}" placeholder='ex: 1500' data-component='number'
+            aria-labelledby='label_80' required='' step='any' />
+        </div>
+      </li>
+      <li class='form-line' data-type='control_textarea' id='id_44'>
+        <label class='form-label form-label-top form-label-auto' id='label_44' for='input_44'>
+          Autres Informations:
+        </label>
+        <div id='cid_44' class='form-input-wide' data-layout='full'>
+          <textarea id='input_44' class='form-textarea' name='comments' style='width:648px;height:163px'
+            data-component='textarea' aria-labelledby='label_44'>
+            {{ flashMessages.get('comments', '') }}
+            </textarea>
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_checkbox' id='id_51'>
+        <label class='form-label form-label-top' id='label_51' for='input_51'>
+          J'autorise BKR Kredit à obtenir mes informations personnelles et de crédit à mon sujet auprès de mon
+          employeur et de mon bureau de crédit, ou d'une agence d'évaluation du crédit, de toute personne qui a ou
+          peut avoir des relations financières avec moi, ou de toute référence que j'ai fournie . Ces
+          informations, ainsi que celles que j'ai fournies dans la demande, seront mentionnées dans le cadre de ce
+          bail et de toute autre relation que nous pourrions établir de temps à autre. Toute information
+          personnelle et de crédit obtenue peut être divulguée de temps à autre à d'autres prêteurs, bureaux de
+          crédit ou autres agences d'évaluation du crédit.
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_51' class='form-input-wide jf-required' data-layout='full'>
+          <div class='form-single-column' role='group' aria-labelledby='label_51' data-component='checkbox'>
+            <span class='form-checkbox-item' style='clear:left'>
+              <span class='dragger-item'>
+              </span>
+              <input type='checkbox' aria-describedby='label_51' class='form-checkbox validate[required]'
+                id='input_51_0' name='acceptTerms' value='YES' required='' {{ flashMessages.get('acceptTerms', ''
+                )=='YES' ? 'checked' : '' }} />
+              <label id='label_input_51_0' for='input_51_0'> OUI </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class='form-line jf-required' data-type='control_checkbox' id='id_52'>
+        <label class='form-label form-label-top' id='label_52' for='input_52'>
+          J'accepte par la présente que les informations fournies sont vraies, exactes et complètes à la date de
+          soumission de cette candidature.
+          <span class='form-required'>
+            *
+          </span>
+        </label>
+        <div id='cid_52' class='form-input-wide jf-required' data-layout='full'>
+          <div class='form-single-column' role='group' aria-labelledby='label_52' data-component='checkbox'>
+            <span class='form-checkbox-item' style='clear:left'>
+              <span class='dragger-item'>
+              </span>
+              <input type='checkbox' aria-describedby='label_52' class='form-checkbox validate[required]'
+                id='input_52_0' name='acceptConditions' value='YES' required='' {{
+                flashMessages.get('acceptConditions', '' )=='YES' ? 'checked' : '' }} />
+              <label id='label_input_52_0' for='input_52_0'> OUI </label>
+            </span>
+          </div>
+        </div>
+      </li>
+      <li class='form-line jf-required text-center d-flex justify-content-center'>
+        <h6 style='font-weight:500; text-align:center;'>UN CRÉDIT VOUS ENGAGE ET DOIT ÊTRE REMBOURSÉ.
+          <br />
+          VÉRIFIEZ VOS CAPACITÉS DE REMBOURSEMENT AVANT DE VOUS ENGAGER.
+        </h6>
+      </li>
+      <li class='form-line' data-type='control_button' id='id_45'>
+        <div id='cid_45' class='form-input-wide' data-layout='full'>
+          <div data-align='center' class='form-buttons-wrapper form-buttons-center jsTest-button-wrapperField'>
+            <button type='submit'
+              class='form-submit-button submit-button jf-form-buttons jsTest-submitField text-center'
+              data-component='button'>
+              Soumettre ma demande
+            </button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</form>

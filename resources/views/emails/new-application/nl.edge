@@ -1,0 +1,87 @@
+<mjml>
+  <mj-head>
+    <mj-title>
+      Uw aanvraag is succesvol ontvangen!
+    </mj-title>
+    <mj-preview>
+      Bedankt dat u de eerste stap heeft gezet. Nu gaan we u helpen het proces af te ronden.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#E7E7E7" width="600px">
+    <mj-section background-color="#E7E7E7" padding-bottom="0px">
+      <mj-column width="100%">
+        <mj-image padding-bottom="30px" src="{{linkLogo}}" alt="" align="center" width="150px"></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0px" css-class="body-section">
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="20px">
+            Uw leningaanvraag is succesvol ontvangen!
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">Hallo {{firstName}}, {{lastName}}</mj-text>
+          <mj-text color="#637381" font-size="16px">
+            We hebben uw leningaanvraag ontvangen en we gaan u helpen het proces af te ronden. <br>
+            We zullen zo snel mogelijk contact met u opnemen om uw project te bespreken. <br>
+            Ondertussen kunt u de voortgang van uw aanvraag volgen door op de onderstaande knop te klikken.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <strong>Hier volgt een samenvatting van uw aanvraag:</strong>
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <ul>
+              <li style="padding-bottom: 20px"><strong>Soort lening:</strong> {{loanType}}</li>
+              <li style="padding-bottom: 20px"><strong>Bedrag lening:</strong> {{loanAmount}} &nbsp;&euro;</li>
+              <li><strong>Looptijd lening:</strong> {{loanDuration}} maanden</li>
+            </ul>
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Als u vragen heeft, aarzel dan niet om contact met ons op te nemen door op de onderstaande knop te klikken.
+          </mj-text>
+          <mj-button background-color="#016f3b" align="center" color="#ffffff" font-size="17px" font-weight="bold"
+            href="{{linkContact}}" width="300px">
+            Praat met een adviseur
+          </mj-button>
+          <mj-button background-color="#016f3b" align="center" color="#ffffff" font-size="17px" font-weight="bold"
+            href="{{linkFollow}}" width="300px">
+            Volg uw aanvraag
+          </mj-button>
+          <mj-text color="#637381" align="center" font-size="16px" padding-bottom="0px">
+            <strong>Bedankt voor uw vertrouwen,</strong> <br>
+            <strong>Het BKR Kredit-team.</strong>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section padding-top="0">
+        <mj-group>
+          <mj-column width="100%" padding-right="0px">
+            <mj-text color="#445566" font-size="11px" align="center" line-height="16px" font-weight="bold"><a
+                class="footer-link" href="{{linkPrivacy}}">Privacy</a>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a
+                class="footer-link" href="{{linkTerms}}">Voorwaarden</a></mj-text>
+          </mj-column>
+        </mj-group>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>

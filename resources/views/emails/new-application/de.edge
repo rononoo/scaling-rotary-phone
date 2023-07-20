@@ -1,0 +1,89 @@
+<mjml>
+  <mj-head>
+    <mj-title>
+      Ihre Bewerbung wurde erfolgreich empfangen!
+    </mj-title>
+    <mj-preview>
+      Vielen Dank für den ersten Schritt. Jetzt werden wir Ihnen helfen, den Prozess abzuschließen.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#E7E7E7" width="600px">
+    <mj-section background-color="#E7E7E7" padding-bottom="0px">
+      <mj-column width="100%">
+        <mj-image padding-bottom="30px" src="{{linkLogo}}" alt="" align="center" width="150px"></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0px" css-class="body-section">
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="20px">
+            Ihre Kreditanfrage wurde erfolgreich empfangen!
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">Hallo {{firstName}}, {{lastName}}</mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Wir haben Ihre Kreditanfrage erhalten und werden Ihnen helfen, den Prozess abzuschließen. <br>
+            Wir werden uns so schnell wie möglich bei Ihnen melden, um Ihr Projekt zu besprechen. <br>
+            In der Zwischenzeit können Sie den Fortschritt Ihrer Anwendung verfolgen, indem Sie auf den unten stehenden
+            Button klicken.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <strong>Hier ist eine Zusammenfassung Ihrer Anfrage:</strong>
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <ul>
+              <li style="padding-bottom: 20px"><strong>Kreditart:</strong> {{loanType}}</li>
+              <li style="padding-bottom: 20px"><strong>Kreditbetrag:</strong> {{loanAmount}} &nbsp;&euro;</li>
+              <li><strong>Kreditlaufzeit:</strong> {{loanDuration}} Monate</li>
+            </ul>
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            Wenn Sie Fragen haben, zögern Sie bitte nicht, uns über den unten stehenden Button zu kontaktieren.
+          </mj-text>
+          <mj-button background-color="#016f3b" align="center" color="#ffffff" font-size="17px" font-weight="bold"
+            href="{{linkContact}}" width="300px">
+            Sprechen Sie mit einem Berater
+          </mj-button>
+          <mj-button background-color="#016f3b" align="center" color="#ffffff" font-size="17px" font-weight="bold"
+            href="{{linkFollow}}" width="300px">
+            Verfolgen Sie Ihre Anwendung
+          </mj-button>
+          <mj-text color="#637381" align="center" font-size="16px" padding-bottom="0px">
+            <strong>Vielen Dank für Ihr Vertrauen,</strong> <br>
+            <strong>Das BKR Kredit-Team.</strong>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section padding-top="0">
+        <mj-group>
+          <mj-column width="100%" padding-right="0px">
+            <mj-text color="#445566" font-size="11px" align="center" line-height="16px" font-weight="bold"><a
+                class="footer-link"
+                href="{{linkPrivacy}}">Datenschutz</a>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a
+                class="footer-link" href="{{linkTerms}}">Allgemeine Geschäftsbedingungen</a></mj-text>
+          </mj-column>
+        </mj-group>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>

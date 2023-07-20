@@ -1,0 +1,157 @@
+@layout('layouts/admin')
+
+@section('content')
+<!-- Navbar -->
+<nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+  navbar-scroll="true">
+  <div class="container-fluid py-1 px-3">
+    <nav aria-label="breadcrumb">
+      <h6 class="font-weight-bolder mb-0">
+        <a href="/admin/dashboard">
+          <i class="fa fa-arrow-left"></i>
+          Retour à l'acceuil
+        </a>
+      </h6>
+    </nav>
+  </div>
+</nav>
+<!-- End Navbar -->
+<div class="container-fluid">
+  <div class=" row">
+    <div class="col-md-5 border-right">
+      <div class="p-3 py-5">
+        <form action="/admin/application/{{application.id}}" method="POST">
+          {{ csrfField() }}
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="text-right">Informations</h4>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-6"><label class="labels">Nom</label><input name="lastname" type="text"
+                class="form-control" value="{{application.user.firstName}}" disabled></div>
+            <div class="col-md-6"><label class="labels">Prénom</label><input name="firstname" type="text"
+                class="form-control" value="{{application.user.lastName}}" disabled></div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-12"><label class="labels">Email</label><input name="email" type="email"
+                class="form-control" value="{{application.user.email}}" disabled></div>
+            <div class="col-md-12"><label class="labels">Téléphone</label><input name="phone" type="tel"
+                class="form-control" value="{{application.user.phone}}" disabled></div>
+            <div class="col-md-12"><label class="labels">Situation Maritale</label><input name="maritalStatus"
+                type="text" class="form-control" value="
+                @if(application.user.maritalStatus == 'married')
+Marié
+                  @elseif(application.user.maritalStatus == 'single')
+Célibataire
+                  @elseif(application.user.maritalStatus == 'divorced')
+Divorcé
+                  @elseif(application.user.maritalStatus == 'widower')
+Veuf
+                  @endif
+" disabled></div>
+            <div class="col-md-12"><label class="labels">Type de Prêt</label><input name="loanType" type="text"
+                class="form-control" value="{{application.loanType}}"></div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-6"><label class="labels">Montant en &euro;</label><input name="loanAmount" type="text"
+                class="form-control" value="{{application.loanAmount}}"></div>
+            <div class="col-md-6"><label class="labels">Durée en mois</label><input name="loanDuration" type="text"
+                class="form-control" value="{{application.loanDuration}}"></div>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-12"><label class="labels">Employeur Actuel</label><input name="actualEmployer"
+                type="text" class="form-control" value="{{application.employer}}"></div>
+            <div class="col-md-12"><label class="labels">Profession</label><input name="actualJob" type="text"
+                class="form-control" value="{{application.occupation}}"></div>
+            <div class="col-md-12"><label class="labels">Salaire en &euro;</label><input name="income" type="number"
+                class="form-control" value="{{application.income}}"></div>
+            <div class="col-md-12"><label class="labels">Autres Informations</label><textarea name="othersMention"
+                type="text" class="form-control">{{application.comments}}</textarea></div>
+          </div>
+          @if(Number(application.progress) === 25)
+          <div class="row mt-3">
+            <label for="f-option" class="l-radio">
+              <input type="radio" id="f-option" name="progress" value="25" checked>
+              <span>Demande Envoyé</span>
+            </label>
+            <label for="s-option" class="l-radio">
+              <input type="radio" id="s-option" name="progress" value="50">
+              <span>En cours de traitement</span>
+            </label>
+            <label for="t-option-1" class="l-radio">
+              <input type="radio" id="t-option-1" name="progress" value="75">
+              <span>Constitution du dossier</span>
+            </label>
+            <label for="t-option-2" class="l-radio">
+              <input type="radio" id="t-option-2" name="progress" value="100">
+              <span>Dossier Traitée</span>
+            </label>
+          </div>
+          @elseif(Number(application.progress) === 50)
+          <div class="row mt-3">
+            <label for="f-option" class="l-radio">
+              <input type="radio" id="f-option" name="progress" value="25">
+              <span>Demande Envoyé</span>
+            </label>
+            <label for="s-option" class="l-radio">
+              <input type="radio" id="s-option" name="progress" value="50" checked>
+              <span>En cours de traitement</span>
+            </label>
+            <label for="t-option-1" class="l-radio">
+              <input type="radio" id="t-option-1" name="progress" value="75">
+              <span>Constitution du dossier</span>
+            </label>
+            <label for="t-option-2" class="l-radio">
+              <input type="radio" id="t-option-2" name="progress" value="100">
+              <span>Dossier Traitée</span>
+            </label>
+          </div>
+          @elseif(Number(application.progress) === 75)
+          <div class="row mt-3">
+            <label for="f-option" class="l-radio">
+              <input type="radio" id="f-option" name="progress" value="25">
+              <span>Demande Envoyé</span>
+            </label>
+            <label for="s-option" class="l-radio">
+              <input type="radio" id="s-option" name="progress" value="50">
+              <span>En cours de traitement</span>
+            </label>
+            <label for="t-option-1" class="l-radio">
+              <input type="radio" id="t-option-1" name="progress" value="75" checked>
+              <span>Constitution du dossier</span>
+            </label>
+            <label for="t-option-2" class="l-radio">
+              <input type="radio" id="t-option-2" name="progress" value="100">
+              <span>Dossier Traitée</span>
+            </label>
+          </div>
+          @elseif(Number(application.progress) === 100)
+          <div class="row mt-3">
+            <label for="f-option" class="l-radio">
+              <input type="radio" id="f-option" name="progress" value="25">
+              <span>Demande Envoyé</span>
+            </label>
+            <label for="s-option" class="l-radio">
+              <input type="radio" id="s-option" name="progress" value="50">
+              <span>En cours de traitement</span>
+            </label>
+            <label for="t-option-1" class="l-radio">
+              <input type="radio" id="t-option-1" name="progress" value="75">
+              <span>Constitution du dossier</span>
+            </label>
+            <label for="t-option-2" class="l-radio">
+              <input type="radio" id="t-option-2" name="progress" value="100" checked>
+              <span>Dossier Traitée</span>
+            </label>
+          </div>
+          @endif
+          <div class="mt-5 text-center">
+            <button class="btn btn-dark profile-button" type="submit">
+              Mettre à jour
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+@end

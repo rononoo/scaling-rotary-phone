@@ -1,0 +1,212 @@
+@layout('layouts/master')
+@set('title', 'Dashboard')
+
+@section('content')
+<style>
+  #loan-submit {
+    background: #13a456;
+    padding: 7px 15px;
+    color: #fff;
+    transition: 0.4s;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+
+  #loan-submit:hover {
+    background: #096f37;
+    border-radius: 3px;
+  }
+
+  .card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.10rem
+  }
+
+  .card-header:first-child {
+    border-radius: calc(0.37rem - 1px) calc(0.37rem - 1px) 0 0
+  }
+
+  .card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+  }
+
+  .track {
+    position: relative;
+    background-color: #ddd;
+    height: 7px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 50px
+  }
+
+  .track .step {
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    width: 25%;
+    margin-top: -18px;
+    text-align: center;
+    position: relative
+  }
+
+  .track .step.active:before {
+    background: #18d26e
+  }
+
+  .track .step::before {
+    height: 7px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    left: 0;
+    top: 18px
+  }
+
+  .track .step.active .icon {
+    background: #18d26e;
+    color: #fff
+  }
+
+  .track .icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    border-radius: 100%;
+    background: #ddd
+  }
+
+  .track .step.active .text {
+    font-weight: 400;
+    color: #000
+  }
+
+  .track .text {
+    display: block;
+    margin-top: 7px
+  }
+
+  .itemside {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%
+  }
+
+  .itemside .aside {
+    position: relative;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+  }
+
+  .img-sm {
+    width: 80px;
+    height: 80px;
+    padding: 7px
+  }
+
+  ul.row,
+  ul.row-sm {
+    list-style: none;
+    padding: 0
+  }
+
+  .itemside .info {
+    padding-left: 15px;
+    padding-right: 7px
+  }
+
+  .itemside .title {
+    display: block;
+    margin-bottom: 5px;
+    color: #212529
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem
+  }
+</style>
+
+<section id='intro' style='height: 75px;'>
+  <div class='intro-container'>
+    <div id='introCarousel'>
+      <div class='carousel-inner' role='listbox' />
+    </div>
+  </div>
+</section>
+<main id="main">
+  <section id="contact" class="section-bg wow fadeInUp">
+    <div class="container">
+      <div class="container">
+        <article class="card">
+          <header class="card-header"> Suivie de mes demandes</header>
+          @each(application in applications)
+          <div class="card-body">
+            <h6>
+              Identifiant de la demande : {{application.trackingNumber}}
+            </h6>
+            <article class="card">
+              <div class="card-body row">
+                <div class="col">
+                  <strong>Nom, Prénom</strong><br>
+                  {{user.firstName}}&nbsp;{{user.lastName}}
+                </div>
+
+                <div class="col">
+                  <strong>Statut de la demande</strong><br>
+                  @if(application.status === 'pending')
+                  <p>Demande envoyé</p>
+                  @elseif(application.status === 'received')
+                  <p>En cours de traitement</p>
+                  @elseif(application.status === 'approved')
+                  <p>Constitution du dossier</p>
+                  @else
+                  <p>Dossier Traitée</p>
+                  @endif
+                </div>
+
+                <div class="col">
+                  <strong>Montant du prêt</strong><br>
+                  {{application.loanAmount}}&nbsp;&euro;
+                </div>
+
+                <div class="col">
+                  <strong>Durée du prêt</strong><br>
+                  {{application.loanDuration}}&nbsp;mois
+                </div>
+            </article>
+            <div class="track">
+              @!component('components/tracker', {
+              status: application.status
+              })
+            </div>
+            <hr>
+            @end
+            <a href="/" id="loan-submit" data-abc="true"> <i class="fa fa-chevron-left"></i> Retour à l'acceuil</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+@endsection

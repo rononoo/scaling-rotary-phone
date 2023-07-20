@@ -1,0 +1,96 @@
+<mjml>
+  <mj-head>
+    <mj-title>
+      Your application was received successfully !
+    </mj-title>
+    <mj-preview>
+      Thanks you for taking the first step, now we are going to help you finalize the process.</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-all>
+      <mj-text font-weight="400" font-size="16px" color="#000000" line-height="24px"
+        font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"></mj-text>
+    </mj-attributes>
+    <mj-style inline="inline">
+      .body-section {
+      -webkit-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 4px 11px 0px rgba(0, 0, 0, 0.15);
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .text-link {
+      color: #5e6ebf
+      }
+    </mj-style>
+    <mj-style inline="inline">
+      .footer-link {
+      color: #888888
+      }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#E7E7E7" width="600px">
+    <mj-section background-color="#E7E7E7" padding-bottom="0px">
+      <mj-column width="100%">
+        <mj-image padding-bottom="30px" src="{{linkLogo}}" alt="" align="center" width="150px"></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-wrapper padding-top="0" padding-bottom="0px" css-class="body-section">
+      <mj-section background-color="#ffffff" padding-left="15px" padding-right="15px">
+        <mj-column width="100%">
+          <mj-text color="#212b35" font-weight="bold" font-size="20px">
+            Your loan application has been received successfully !
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">Hi {{firstName}}, {{lastName}}</mj-text>
+          <mj-text color="#637381" font-size="16px">
+            We have received your loan application and we are going to help you finalize the process. <br>
+            We will contact you as soon as possible to discuss your project. <br>
+            In the meantime, you can follow the progress of your application by clicking on the button below.
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <strong>Here is a summary of your request :</strong>
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <ul>
+              <li style="padding-bottom: 20px"><strong>Loan type :</strong> {{loanType}}</li>
+              <li style="padding-bottom: 20px"><strong>Loan amount :</strong> {{loanAmount}} &nbsp;&euro;</li>
+              <li><strong>Loan duration :</strong> {{loanDuration}} months</li>
+            </ul>
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <strong>Here is your login credentials:</strong>
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            <ul>
+              <li style="padding-bottom: 20px"><strong>Email :</strong> {{email}}</li>
+              <li style="padding-bottom: 20px"><strong>Password :</strong> {{password}}</li>
+            </ul>
+          </mj-text>
+          <mj-text color="#637381" font-size="16px">
+            If you have any questions, please do not hesitate to contact us by clicking on the button below.
+          </mj-text>
+          <mj-button background-color="#016f3b" align="center" color="#ffffff" font-size="17px" font-weight="bold"
+            href="{{linkContact}}" width="300px">
+            Talk to an advisor
+          </mj-button>
+          <mj-button background-color="#016f3b" align="center" color="#ffffff" font-size="17px" font-weight="bold"
+            href="{{linkFollow}}" width="300px">
+            Follow your application
+          </mj-button>
+          <mj-text color="#637381" align="center" font-size="16px" padding-bottom="0px">
+            <strong>Thank you for your trust,</strong> <br>
+            <strong>The BKR Kredit team.</strong>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+      <mj-section padding-top="0">
+        <mj-group>
+          <mj-column width="100%" padding-right="0px">
+            <mj-text color="#445566" font-size="11px" align="center" line-height="16px" font-weight="bold"><a
+                class="footer-link" href="{{linkPrivacy}}">Privacy</a>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<a
+                class="footer-link" href="{{linkTerms}}">Terms</a></mj-text>
+          </mj-column>
+        </mj-group>
+      </mj-section>
+    </mj-wrapper>
+  </mj-body>
+</mjml>

@@ -1,0 +1,239 @@
+@layout('layouts/master')
+@set('title', 'Nos Services')
+
+@section('content')
+<section id='intro' style='height: 70vh'>
+  <div class='intro-container'>
+    <div id='introCarousel'>
+      <div class='carousel-inner' role='listbox'>
+        <div class='carousel-item active' style="background-image: url('/img/about-bg.jpg'); height: 70vh">
+          <div class='carousel-container'>
+            <div class='carousel-content'>
+              <h2>NOS OFFRES DE SERVICES</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<main id='main'>
+  <!--========================== Services ============================-->
+  <section id='services' class='wow fadeIn'>
+    <div class='container'>
+      <header class='section-header'>
+        <h3>Pret Personnel</h3>
+      </header>
+      <div class='section-top-border'>
+        <div class='row'>
+          <div class='col-md-6 my-3'>
+            <img src='/img/3.jpg' alt='clients heureux de contrater un pret chez BKR Kredit' class='img-fluid' />
+          </div>
+          <div class='col-md-6 my-3'>
+            <p>
+              À chaque projet son financement : acheter une nouvelle auto, prévoir des travaux ou décorer votre
+              logement, améliorer votre quotidien par de nouveaux loisirs, organiser un voyage ou tout simplement
+              anticiper un coup dur ?
+              <strong>
+                <span class='notranslate'>BKR Kredit</span>
+                vous aide à réaliser vos projets grâce à une offre ajustée à vos besoins et des taux toujours
+                attractifs.</strong>
+              <br /><br />
+              Réalisez votre souscription de prêt Personnel directement en ligne. C'est simple, pratique et 100%
+              sécurisé. Avec
+              <span class='notranslate'>BKR Kredit</span>, vous êtes rapidement fixé sur votre demande de Prêt Personnel
+              : simulez pour trouver la meilleure combinaison montant-mensualités et
+              <strong>obtenez une réponse de principe immédiatement !</strong>
+            </p>
+            <div class='text-center'>
+              <a id='loan-submit' href='/ask-for-loan' class='btn btn-success'>Demandez un Prêt Personnel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========================== Services ============================-->
+  <section id='services' class='wow fadeIn'>
+    <div class='container'>
+      <header class='section-header'>
+        <h3>CREDIT AUTO</h3>
+      </header>
+      <div class='section-top-border'>
+        <div class='row flex-row-reverse'>
+          <div class='col-md-6 my-3'>
+            <img src='/img/5.jpg' alt='Famille heureuse recevant la clé de leur automobile' class='img-fluid' />
+          </div>
+          <div class='col-md-6 my-3'>
+            <p>
+              <strong>Un prêt pour acheter une auto neuve ou d'occasion !</strong>
+              <br />
+              Vous souhaitez acquérir une voiture neuve ou d’occasion, tenter les 2 roues pour éviter les
+              embouteillages, acheter un deuxième véhicule pour plus de confort, ou choisir une auto plus grande pour
+              toute la famille ?
+              <br /><br />
+              Un remboursement simple, Vous choisissez le montant de vos mensualités en fonction de vos capacités
+              financières. Vos mensualités sont fixes et connues à l’avance. Vous pouvez toujours demander un report de
+              vos mensualités. Vous pouvez également choisir de rembourser tout ou partie de votre prêt de façon
+              anticipée et sans frais. Pour cela, il vous suffit de contacter votre conseiller de
+              <span class='notranslate'>BKR Kredit</span>.
+            </p>
+            <div class='text-center'>
+              <a id='loan-submit' href='/ask-for-loan' class='btn btn-success'>Demandez un Crédit Auto</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--============================ CTA ===============================-->
+  @!include('includes/cta')
+
+  <!--========================== Services ============================-->
+  <section id='services' class='wow fadeIn'>
+    <div class='container'>
+      <header class='section-header'>
+        <h3>CREDIT IMMOBILIER</h3>
+      </header>
+      <div class='section-top-border'>
+        <div class='row'>
+          <div class='col-md-6 my-3'>
+            <img src='/img/2.jpg' alt='Le pret immobilier chez crefit funnel' class='img-fluid' />
+          </div>
+          <div class='col-md-6 my-3'>
+            <p style='margin-bottom: 0.8rem'>
+              <strong>Qu’est-ce qu’un prêt immobilier ?</strong><br />
+              Vous avez trouvé le logement de vos rêves et souhaitez devenir propriétaire ? Le prêt immobilier, ou
+              crédit immobilier, est un emprunt bancaire destiné à financer totalement ou partiellement :
+            </p>
+            <ul>
+              <li>
+                L’achat d’un bien immobilier (résidence principale, résidence secondaire ou investissement locatif)
+              </li>
+              <li>Sa construction</li>
+              <li>Ou des travaux sur celui-ci</li>
+            </ul>
+            <p>
+              Un crédit immobilier vous lie contractuellement à une banque. Celle-ci accepte de vous prêter de l’argent
+              pour que vous puissiez acheter votre bien immobilier à un instant T, contre le remboursement intégral de
+              cette somme avec intérêts. Cette formule classique de prêt immobilier peut également s’adapter à
+              différentes variantes que nous verrons plus tard.
+            </p>
+            <div class='text-center'>
+              <a id='loan-submit' href='/ask-for-loan' class='btn btn-success'>Demandez un Crédit Immobilier</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========================== Services ============================-->
+  <section id='services' class='wow fadeIn'>
+    <div class='container'>
+      <header class='section-header'>
+        <h3>CREDIT MARIAGE</h3>
+      </header>
+      <div class='section-top-border'>
+        <div class='row flex-row-reverse'>
+          <div class='col-md-6 my-3'>
+            <img src='/img/1.jpg' alt='Le crédit mariage' class='img-fluid' />
+          </div>
+          <div class='col-md-6 my-3'>
+            <p>
+              <strong>Le crédit mariage est un prêt personnel non affecté</strong>, à l’instar par exemple d’un crédit
+              divorce ou d’un crédit voyage, prêt personnel que vous pourrez utiliser librement pour le financement de
+              votre cérémonie de mariage. Il vous permettra de compléter votre apport personnel en empruntant la somme
+              nécessaire pour que l’événement soit une réussite. Il est établi en fonction de
+              <strong>l’apport personnel</strong>
+              que vous prévoyez, du
+              <strong>budget total</strong>
+              à envisager, de
+              <strong>la capacité de remboursement</strong>
+              du couple et de la
+              <strong> durée de ce remboursement (jusqu’à 7 ans).</strong>
+            </p>
+            <div class='text-center'>
+              <a id='loan-submit' href='/ask-for-loan' class='btn btn-success'>Demandez un Crédit Mariage</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========================== Testimonials ============================-->
+  @!include('includes/testimonials')
+
+  <!--========================== Services ============================-->
+  <section id='services' class='wow fadeIn'>
+    <div class='container'>
+      <header class='section-header'>
+        <h3>PRET VACANCES</h3>
+      </header>
+      <div class='section-top-border'>
+        <div class='row'>
+          <div class='col-md-6 my-3'>
+            <img src='/img/6.jpg' alt='' class='img-fluid' />
+          </div>
+          <div class='col-md-6 my-3'>
+            <p>
+              Pour profiter d’un repos bien mérité, vous envisagez de vous offrir des vacances de rêve. Que vous
+              projetiez un voyage à l’étranger, un séjour en montagne ou un stage de wingsuit, ces envies nécessitent un
+              budget. Afin de vous ressourcer sans vous ruiner, optez pour un crédit vacances.
+              <br /><br />
+              Des vacances de rêve sans se ruiner ? C’est possible ! Aller vous prélasser sous les cocotiers, partir
+              pour de longues randonnées en forêt, pratiquer le ski de fond, le char à voile ou le deltaplane : une
+              année de travail s’achève et vous comptez bien profiter de vos vacances pour vous adonner à vos passions
+              et oublier les soucis du quotidien. Vos projets nécessitent un budget, et c’est la raison pour laquelle
+              souscrire un prêt vacances peut vous aider à réaliser vos rêves sans risquer la faillite
+            </p>
+            <div class='text-center'>
+              <a id='loan-submit' href='/ask-for-loan' class='btn btn-success'>Demandez un Prêt Vacances</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--========================== Services ============================-->
+  <section id='services' class='wow fadeIn'>
+    <div class='container'>
+      <header class='section-header'>
+        <h3>CREDIT DE CONSOLIDATION</h3>
+      </header>
+      <div class='section-top-border'>
+        <div class='row flex-row-reverse'>
+          <div class='col-md-6 my-3'>
+            <img src='/img/4.jpg' alt='' class='img-fluid' />
+          </div>
+          <div class='col-md-6 my-3'>
+            <p>
+              Un prêt de consolidation de dettes appelé aussi refinancement est recherché par de nombreuses personnes
+              endettées qui souhaite se débarrasser de certains financements coûteux qui consomment inutilement leur
+              trésorerie et ainsi leurs liquidités.
+              <br />
+              Le rôle du prêt dans une consolidation de dettes est capital, puisque c’est lui qui va remplacer tous les
+              financements existants et toutes les dettes contractées comme les prêts à la consommation, les cartes de
+              crédit pour les transformer en un seul et unique nouvel emprunt qui sera remboursé avec des conditions
+              différentes (taux d’intérêt et durée de remboursement compris).
+            </p>
+            <div class='text-center'>
+              <a id='loan-submit' href='/ask-for-loan' class='btn btn-success'>Demandez un Prêt de Consolidation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--=========================== Patners ============================-->
+  @!include('includes/partners')
+
+  <!--=========================== Contact ============================-->
+  @!include('includes/contact')
+</main>
+@endsection

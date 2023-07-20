@@ -1,1 +1,0 @@
-# scaling-rotary-phone

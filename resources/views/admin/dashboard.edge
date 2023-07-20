@@ -1,0 +1,163 @@
+@layout('layouts/admin')
+
+@section('content')
+<div class="container-fluid py-4">
+  <div class="row mt-2">
+    <div class="col-lg-6 mb-lg-0 mb-4">
+      <div class="card">
+        <div class="card-body p-3">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="d-flex flex-column h-100">
+                <p class="mb-1 pt-2 text-bold">Informations de Connexion</p>
+                <h5 class="font-weight-bolder">WebMail</h5>
+                <p class="mb-5">
+                  <strong>Lien WebMail : </strong><a href="https://mail45.lwspanel.com/roundcube14/" target="_blank"
+                    rel="noopener noreferrer">https://mail45.lwspanel.com/roundcube14/</a>
+                  <br> <strong>Email : </strong> contact@bkrkredit.com
+                  <br> <strong>Mot de passe : </strong> vE3!NndScHDhQcE
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-lg-0 mb-4">
+      <div class="card">
+        <div class="card-body p-3">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="d-flex flex-column h-100">
+                <p class="mb-1 pt-2 text-bold">Informations de Connexion</p>
+                <h5 class="font-weight-bolder">Dashboard</h5>
+                <p class="mb-5">
+                  <strong>Lien Dashboard : </strong><a href="https://bkrkredit/admin/dashboard" target="_blank"
+                    rel="noopener noreferrer">https://bkrkredit/admin/dashboard</a>
+                  <br> <strong>Email : </strong> admin@bkrkredit.com
+                  <br> <strong>Mot de passe : </strong> vE3!NndScHDhQcE
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-12">
+      <div class="card mb-4">
+        <div class="card-header pb-0">
+          <h6>Toutes les demandes de Prêt</h6>
+        </div>
+        <div class="card-body px-0 pt-0 pb-5">
+          <div class="table-responsive p-0">
+            <table class="table align-items-center justify-content-center mb-0" id="table">
+              <thead>
+                <tr>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Noms & Email</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Montant Prêt</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type de Prêt</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                    Progression</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                @unless(applications.length > 0)
+                <tr class="">
+                  <td colspan="6" class="text-center">
+                    <p class="text-sm font-weight-bold">Aucune demande de prêt pour le moment</p>
+                  </td>
+                </tr>
+                @else
+                @each(application in applications)
+                <tr>
+                  <td>
+                    <div class="d-flex px-2">
+                      <div class="my-auto">
+                        <h6 class="mb-0 text-sm">
+                          <a href="/admin/application/{{application.id}}">
+                            {{application.user.firstName}} {{application.user.lastName}}
+                          </a>
+                        </h6>
+                        <p class="text-xs text-secondary mb-0">
+                          {{application.user.email}}
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <p class="text-sm font-weight-bold mb-0">&euro;&nbsp;
+                      {{application.loanAmount}}
+                    </p>
+                  </td>
+                  <td>
+                    <span class="text-sm font-weight-bold" style="text-transform:capitalize;">
+                      @if(application.loanType == 'personal')
+                      Personnel
+                      @elseif(application.loanType == 'real-state')
+                      Immobilier
+                      @elseif(application.loanType == 'holidays')
+                      Vacances
+                      @elseif(application.loanType == 'automobile')
+                      Automobile
+                      @elseif(application.loanType == 'weeding')
+                      Mariage
+                      @elseif(application.loanType == 'consolidation')
+                      Consolidation
+                      @elseif(application.loanType == 'other')
+                      Autres
+                      @endif
+                    </span>
+                  </td>
+                  <td class="align-middle text-center">
+                    <div class="d-flex align-items-center justify-content-center">
+                      <span class="me-2 text-sm font-weight-bold">
+                        {{application.progress}}%
+                      </span>
+                      <div>
+                        <div class="progress">
+                          <div class="progress-bar bg-gradient-info" role="progressbar"
+                            aria-valuenow="{{application.progress}}" aria-valuemin="0" aria-valuemax="100"
+                            style="width: {{application.progress}}%">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="align-middle">
+                    <p class="text-xs font-weight-bold">
+                      {{new Date(application.createdAt).toLocaleDateString()}}
+                    </p>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold">
+                      <a href="" style="cursor: pointer;" id="{{application.id}}" class="delete-btn">
+                        <i class="fa fa-trash" style="color: #9d0c0c;" id="{{application.id}}"></i>
+                      </a>
+                    </p>
+                  </td>
+                </tr>
+                @endeach
+                @endunless
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const deleteBtns = document.querySelectorAll('.delete-btn');
+  deleteBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      confirm('Voulez-vous vraiment supprimer cette demande ?') ? window.location.href = `/admin/application/${e.target.id}/delete` : null;
+    });
+  });
+
+</script>
+@endsection

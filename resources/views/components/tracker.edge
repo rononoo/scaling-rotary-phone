@@ -1,0 +1,133 @@
+@if(status === 'pending')
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-check"></i>
+  </span>
+  <span class="text">
+    Demande Envoyé
+  </span>
+</div>
+<div class="step">
+  <span class="icon">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="text">
+    En cours de traitement
+  </span>
+</div>
+<div class="step">
+  <span class="icon">
+    <i class="fa fa-file"></i>
+  </span>
+  <span class="text">
+    Constitution du dossier
+  </span>
+</div>
+<div class="step">
+  <span class="icon">
+    <i class="fa fa-check"></i>
+  </span>
+  <span class="text">
+    Dossier Traitée
+  </span>
+</div>
+@elseif(status === 'received')
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-check"></i>
+  </span>
+  <span class="text">
+    Demande Envoyé
+  </span>
+</div>
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="text">
+    En cours de traitement
+  </span>
+</div>
+<div class="step">
+  <span class="icon">
+    <i class="fa fa-file"></i>
+  </span>
+  <span class="text">
+    Constitution du dossier
+  </span>
+</div>
+<div class="step">
+  <span class="icon">
+    <i class="fa fa-check"></i>
+  </span>
+  <span class="text">
+    Dossier Traitée
+  </span>
+</div>
+@elseif(status === 'approved')
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-check"></i>
+  </span>
+  <span class="text">
+    Demande Envoyé
+  </span>
+</div>
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="text">
+    En cours de traitement
+  </span>
+</div>
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-file"></i>
+  </span>
+  <span class="text">
+    Constitution du dossier
+  </span>
+</div>
+<div class="step">
+  <span class="icon">
+    <i class="fa fa-check"></i>
+  </span>
+  <span class="text">
+    Dossier Traitée
+  </span>
+</div>
+@elseif(status === 'rejected')
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-check"></i>
+  </span>
+  <span class="text">
+    Demande Envoyé
+  </span>
+</div>
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="text">
+    En cours de traitement
+  </span>
+</div>
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-file"></i>
+  </span>
+  <span class="text">
+    Constitution du dossier
+  </span>
+</div>
+<div class="step active">
+  <span class="icon">
+    <i class="fa fa-check"></i>
+  </span>
+  <span class="text">
+    Dossier Traitée
+  </span>
+</div>
+@endif
