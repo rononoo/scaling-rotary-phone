@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node ace serve --watch",
     "build": "node ace migration:fresh  --seed --force && node ace build --production",
-    "start": "pwd && node server.js",
+    "start": "node server.js",
     "test": "node ace test",
     "lint": "eslint --config .eslintrc --ext .ts .",
     "format": "prettier --config .prettierrc --write \"**/*.ts\""
