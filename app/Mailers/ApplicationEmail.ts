@@ -82,8 +82,6 @@ export default class ApplicationEmail extends BaseMailer {
       .replyTo(Env.get('SMTP_FROM_MAIL'))
       .encoding('utf-8')
       .priority('high')
-      .cc(Env.get('SMTP_FROM_MAIL'))
-      .bcc(Env.get('SMTP_FROM_MAIL'))
       .from(Env.get('SMTP_FROM_MAIL'), Env.get('SMTP_FROM_NAME'))
       .to(this.application.user.email)
       .html(this.html)
