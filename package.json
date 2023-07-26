@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node ace serve --watch",
-    "build": "npm install @adonisjs/assembler && node ace migration:fresh  --seed --force && node ace build --production && cd build && npm ci --production",
+    "build": "node ace build --production && cd build && npm ci --production",
     "start": "node server.js",
     "test": "node ace test",
     "lint": "eslint --config .eslintrc --ext .ts .",
