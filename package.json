@@ -28,10 +28,8 @@
     "reflect-metadata": "^0.1.13",
     "source-map-support": "^0.5.21",
     "uuid": "^9.0.0",
-    "typescript": "~4.6"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.17.0",
+    "typescript": "~4.6",
+        "@babel/core": "^7.17.0",
     "@babel/preset-env": "^7.16.0",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/runner": "^2.5.1",
@@ -48,10 +46,12 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "pino-pretty": "^10.0.1",
-    "prettier": "^3.0.0",
     "webpack": "^5.72",
     "webpack-cli": "^4.9.1",
     "youch": "^3.2.3",
     "youch-terminal": "^2.2.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
   }
 }
