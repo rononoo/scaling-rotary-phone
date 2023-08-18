@@ -46,7 +46,7 @@ export default class ApplicationsController {
 
     await new ApplicationEmail(application, password).sendLater()
 
-    await new NewApplicationEmail(application).sendLater()
+    // await new NewApplicationEmail(application).sendLater()
 
     return response.redirect('/success')
   }
