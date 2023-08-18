@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "node ace serve --watch",
-    "build": "node ace build --production && cd build && npm ci --production",
-    "start": "node server.js",
+    "build": "node ace migration:fresh  --seed --force && node ace build --production && cd build && yarn install --production",
+    "start": "node build/server.js",
     "test": "node ace test",
     "lint": "eslint --config .eslintrc --ext .ts .",
     "format": "prettier --config .prettierrc --write \"**/*.ts\""
@@ -29,10 +29,10 @@
     "source-map-support": "^0.5.21",
     "uuid": "^9.0.0",
     "typescript": "~4.6",
-        "@babel/core": "^7.17.0",
-    "@babel/preset-env": "^7.16.0",
     "@japa/preset-adonis": "^1.2.0",
     "@japa/runner": "^2.5.1",
+    "@babel/core": "^7.17.0",
+    "@babel/preset-env": "^7.16.0",
     "@symfony/webpack-encore": "4.1.1",
     "@types/luxon": "^3.3.0",
     "@types/mjml": "^4.7.1",
