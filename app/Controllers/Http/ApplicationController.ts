@@ -3,7 +3,6 @@ import Application from 'App/Models/Application'
 import User from 'App/Models/User'
 import ApplicationsValidator from 'App/Validators/ApplicationsValidator'
 import ApplicationEmail from 'App/Mailers/ApplicationEmail'
-import NewApplicationEmail from 'App/Mailers/NewApplicationEmail'
 
 export default class ApplicationsController {
   public static async store({ auth, request, response }: HttpContextContract) {
