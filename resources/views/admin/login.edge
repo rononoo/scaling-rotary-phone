@@ -34,7 +34,8 @@
                   <p class="mb-0">Entrer votre email et votre mot de passe.</p>
                 </div>
                 <div class="card-body">
-                  <form role="form" method="post" action="">
+                  <form role="form" method="post" action="/admin/login">
+                    {{ csrfField() }}
                     <label>Email</label>
                     <div class="mb-3">
                       <input type="email" class="form-control" placeholder="Email" aria-label="Email"

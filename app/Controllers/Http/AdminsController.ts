@@ -1,6 +1,7 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Application from 'App/Models/Application'
 import ApplicationsValidator from 'App/Validators/ApplicationsValidator'
+import { rules, schema } from '@ioc:Adonis/Core/Validator'
 
 export default class AdminController {
   public static async index({ view }: HttpContextContract) {
@@ -40,5 +41,26 @@ export default class AdminController {
     await application.save()
 
     return response.redirect('/admin/application/' + application.id)
+  }
+
+  public static async login({ auth, request, response }: HttpContextContract) {
+    const { email, password } = await request.validate({
+      schema: schema.create({
+        email: schema.string({ trim: true }, [rules.email()]),
+        password: schema.string({ trim: true }, [rules.minLength(8)])
+      })
+    })
+
+    try {
+      await auth.use('web').attempt(email, password)
+
+      if (auth.user?.role === 'admin') {
+        return response.redirect('/admin/dashboard')
+      }
+
+      return response.redirect('/dashboard')
+    } catch {
+      return response.badRequest('Invalid credentials')
+    }
   }
 }
