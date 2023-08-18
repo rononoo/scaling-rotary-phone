@@ -62,4 +62,6 @@ Route.group(() => {
   Route.get('/admin/logout', AuthController.adminLogout)
 }).middleware('admin')
 
-Route.get('admin', async ({ view, auth }) => view.render(auth.isLoggedIn ? 'admin/dashboard' : 'admin/login'))
+Route.get('admin/login', async ({view}) => view.render('admin/login'))
+
+Route.get('admin', async ({ view, auth }) => view.render((auth.user?.role === "admin") ? 'admin/dashboard' : 'admin/login'))
