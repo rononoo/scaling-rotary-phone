@@ -4,7 +4,7 @@ export default class Admin {
   public async handle({ auth, response }: HttpContextContract, next: () => Promise<void>) {
     // code for middleware goes here. ABOVE THE NEXT CALL
 
-    if (auth.user?.role !== 'admin') return response.redirect('/ ')
+    if (auth.user?.role !== 'admin') return response.redirect('/unauthorized')
 
     await next()
   }

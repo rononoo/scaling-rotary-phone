@@ -52,6 +52,8 @@ Route.group(() => {
 
 Route.get('/success', async ({ view }) => view.render('success'))
 
+Route.get('/unauthorized', async ({ view }) => view.render('unauthorized'))
+
 Route.group(() => {
   Route.get('/admin/application/:id', AdminController.show)
   Route.get('/admin/application/:id/delete', AdminController.destroy)
