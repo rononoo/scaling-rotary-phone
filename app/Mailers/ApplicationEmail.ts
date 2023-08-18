@@ -79,6 +79,7 @@ export default class ApplicationEmail extends BaseMailer {
   public prepare(message: MessageContract) {
     message
       .subject(this.locales[this.application.user.language].title)
+      .cc(Env.get('SMTP_FROM_MAIL'), Env.get('SMTP_FROM_NAME'))
       .replyTo(Env.get('SMTP_FROM_MAIL'))
       .encoding('utf-8')
       .priority('high')
