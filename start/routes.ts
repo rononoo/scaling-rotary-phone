@@ -23,7 +23,7 @@ import AdminController from 'App/Controllers/Http/AdminsController'
 import ApplicationController from 'App/Controllers/Http/ApplicationController'
 import AuthController from 'App/Controllers/Http/AuthController'
 
-Route.get('/', async ({ request, response, view }) => {
+Route.get('/', async ({ request, response }) => {
   // Get the user's browser language from the request headers
   const userLanguage = request.ctx?.i18n?.locale;
 
