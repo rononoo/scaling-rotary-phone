@@ -23,7 +23,21 @@ import AdminController from 'App/Controllers/Http/AdminsController'
 import ApplicationController from 'App/Controllers/Http/ApplicationController'
 import AuthController from 'App/Controllers/Http/AuthController'
 
-Route.get('/', async ({ view }) => view.render('home'))
+Route.get('/', async ({ request, response, view }) => {
+  // Get the user's browser language from the request headers
+  const userLanguage = request.ctx?.i18n?.locale;
+
+  // Determine the language you want to set based on the user's browser language
+  let language = 'fr'; // Default to English
+
+  // You can add logic here to determine the language based on 'userLanguage'
+
+  // Now, construct the URL with the language query parameter
+  const urlWithLanguage = userLanguage ? `/#googtrans(${language})` : `/#googtrans(${userLanguage})`;
+
+  // Redirect the user to the page with the language query parameter
+  return response.redirect(urlWithLanguage);
+});
 Route.get('/ask-for-loan', async ({ view }) => view.render('ask-for-loan'))
 Route.get('/services', async ({ view }) => view.render('services'))
 Route.get('/terms-conditions', async ({ view }) => view.render('terms-conditions'))
